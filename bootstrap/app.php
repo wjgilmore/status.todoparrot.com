@@ -2,7 +2,9 @@
 
 require_once __DIR__.'/../vendor/autoload.php';
 
-
+//if (App::environment() == 'local') {
+Dotenv::load(__DIR__.'/../');
+//}
 
 /*
 |--------------------------------------------------------------------------
@@ -18,10 +20,6 @@ require_once __DIR__.'/../vendor/autoload.php';
 $app = new Laravel\Lumen\Application(
 	realpath(__DIR__.'/../')
 );
-
-if ($app->environment() == 'local') {
-Dotenv::load(__DIR__.'/../');
-}
 
  $app->withFacades();
 
