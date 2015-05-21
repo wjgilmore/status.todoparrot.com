@@ -18,3 +18,7 @@ $app->get('/', function() use ($app) {
 $app->get('/status', 'App\Http\Controllers\StatusController@index');
 
 $app->get('/lists/count', 'App\Http\Controllers\StatusController@lists');
+
+$app->get('/', function() use ($app) {
+	return view('home');
+});
