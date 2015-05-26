@@ -3,7 +3,7 @@
 require_once __DIR__.'/../vendor/autoload.php';
 
 //if (App::environment() == 'local') {
-Dotenv::load(__DIR__.'/../');
+//Dotenv::load(__DIR__.'/../');
 //}
 
 /*
