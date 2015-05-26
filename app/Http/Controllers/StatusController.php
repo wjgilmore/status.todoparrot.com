@@ -13,7 +13,7 @@ class StatusController extends Controller {
 
     public function lists()
     {
-\dd(getenv('DB_DEFAULT'));
+
         $result = \DB::select('select count(id) as `count` from todolists');
 
         return response()->json(['count' => $result[0]->count]);
