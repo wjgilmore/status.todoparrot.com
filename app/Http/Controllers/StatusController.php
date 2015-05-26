@@ -16,7 +16,7 @@ class StatusController extends Controller {
 
         $result = \DB::select('select count(id) as "count" from todolists');
 
-        return response()->json(['count' => $result[0]->count]);
+        return response()->json(['count' => $result[0]->count])->setCallback(Input::get('callback'));
     }
 
 }
