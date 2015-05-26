@@ -11,12 +11,12 @@ class StatusController extends Controller {
 		return response()->json(['status' => 'Polly wants a cracker!']);
 	}
 
-    public function lists()
+    public function lists(Request $request)
     {
 
         $result = \DB::select('select count(id) as "count" from todolists');
 
-        return response()->json(['count' => $result[0]->count])->setCallback(\Input::get('callback'));
+        return response()->json(['count' => $result[0]->count])->setCallback($request->input('callback'));
     }
 
 }
